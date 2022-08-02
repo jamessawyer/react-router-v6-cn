@@ -67,6 +67,10 @@ export default {
             text: 'Link',
             link: '/3/Link'
           },
+          {
+            text: 'Link(React Native)',
+            link: '/3/Link-React-Native'
+          },
         ]
       },
       {

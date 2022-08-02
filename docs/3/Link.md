@@ -23,7 +23,7 @@ interface LinkProps
   replace?: boolean;
   state?: any; 
   to: To;
-  reloadDocument?: boolean
+  reloadDocument?: boolean;
 }
 ```
 
