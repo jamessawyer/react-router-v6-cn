@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as o}from"./app.563a97a9.js";const i=JSON.parse('{"title":"Router","description":"","frontmatter":{"title":"Router"},"headers":[],"relativePath":"2/Router.md","lastUpdated":1659434821000}'),p={name:"2/Router.md"},l=o("",6),e=[l];function t(c,r,F,y,D,C){return n(),a("div",null,e)}var d=s(p,[["render",t]]);export{i as __pageData,d as default};
