@@ -130,6 +130,10 @@ export default {
             link: '/4/useOutlet'
           },
           {
+            text: '⚡useOutletContext',
+            link: '/4/useOutletContext'
+          },
+          {
             text: 'useRoutes',
             link: '/4/useRoutes'
           },
