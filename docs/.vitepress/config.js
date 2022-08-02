@@ -74,7 +74,11 @@ export default {
           {
             text: 'NavLink',
             link: '/3/NavLink'
-          }
+          },
+          {
+            text: 'Navigate',
+            link: '/3/Navigate'
+          },
         ]
       },
       {
