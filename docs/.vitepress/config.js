@@ -145,6 +145,10 @@ export default {
             text: 'useRoutes',
             link: '/4/useRoutes'
           },
+          {
+            text: 'useSearchParams',
+            link: '/4/useSearchParams'
+          },
         ]
       },
       {
