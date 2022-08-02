@@ -20,7 +20,7 @@ export default {
         collapsible: true,
         items: [
           {
-            text: '主要概念',
+            text: '⚡主要概念',
             link: '/1/Main-Concepts'
           },
         ]
@@ -29,6 +29,10 @@ export default {
         text: 'Ⅱ.Routers',
         collapsible: true,
         items: [
+          {
+            text: 'BrowserRouter',
+            link: '/2/BrowserRouter'
+          }
         ]
       },
       {
