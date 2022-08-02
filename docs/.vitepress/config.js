@@ -37,6 +37,10 @@ export default {
             text: 'HashRouter',
             link: '/2/HashRouter'
           },
+          {
+            text: 'HistoryRouter',
+            link: '/2/HistoryRouter'
+          },
         ]
       },
       {
