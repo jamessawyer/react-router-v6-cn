@@ -17,7 +17,7 @@ declare function Link(props: LinkProps): React.ReactElement;
 
 interface LinkProps	
   extends Omit<
-    React.AnchorHTMLAttribues<HTMLAnchorElement>,
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
     'href'
 	> {
   replace?: boolean;
