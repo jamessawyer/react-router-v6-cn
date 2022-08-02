@@ -45,6 +45,10 @@ export default {
             text: 'MemoryRouter',
             link: '/2/MemoryRouter'
           },
+          {
+            text: 'NativeRouter',
+            link: '/2/NativeRouter'
+          },
         ]
       },
       {
