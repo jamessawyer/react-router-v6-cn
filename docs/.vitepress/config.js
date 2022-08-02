@@ -102,6 +102,10 @@ export default {
             link: '/4/useInRouterContext'
           },
           {
+            text: 'useLinkClickHandler',
+            link: '/4/useLinkClickHandler'
+          },
+          {
             text: 'useRoutes',
             link: '/4/useRoutes'
           },
