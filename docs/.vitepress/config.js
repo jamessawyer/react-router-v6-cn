@@ -98,6 +98,10 @@ export default {
             link: '/4/useHref'
           },
           {
+            text: 'useInRouterContext',
+            link: '/4/useInRouterContext'
+          },
+          {
             text: 'useRoutes',
             link: '/4/useRoutes'
           },
