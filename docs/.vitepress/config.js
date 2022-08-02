@@ -110,6 +110,10 @@ export default {
             link: '/4/useLinkPressHandler'
           },
           {
+            text: '⚡useLocation',
+            link: '/4/useLocation'
+          },
+          {
             text: 'useRoutes',
             link: '/4/useRoutes'
           },
