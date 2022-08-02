@@ -159,6 +159,10 @@ export default {
             text: 'matchPath',
             link: '/5/matchPath'
           },
+          {
+            text: 'resolvePath',
+            link: '/5/resolvePath'
+          },
         ]
       }
     ]
