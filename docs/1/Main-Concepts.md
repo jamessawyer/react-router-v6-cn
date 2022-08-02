@@ -16,9 +16,9 @@ title: 主要概念
 
 React Router不仅仅是将url匹配到函数或组件：它是关于构建一个映射到URL的完整用户界面，所以它可能比你使用到的有更多的概念。我们将深入React Router的3个主要职责：
 
-1. 订阅和操作 [history栈](https://reactrouter.com/docs/en/v6/getting-started/concepts#history-stack)
-2. 匹配 [URL](#定义) 到你的 [路由](#定义)
-3. 根据 [路由匹配](matches) 渲染嵌套UI
+1. 订阅和操作 `history栈`
+2. 匹配 `URL` 到你的 `路由`
+3. 根据 `路由匹配` 渲染嵌套UI
 
 
 
