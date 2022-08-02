@@ -126,6 +126,10 @@ export default {
             link: '/4/useNavigationType'
           },
           {
+            text: 'useOutlet',
+            link: '/4/useOutlet'
+          },
+          {
             text: 'useRoutes',
             link: '/4/useRoutes'
           },
