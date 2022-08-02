@@ -93,6 +93,10 @@ export default {
         text: 'Ⅶ.Hooks',
         collapsible: true,
         items: [
+          {
+            text: 'useRoutes',
+            link: '/4/useRoutes'
+          },
         ]
       }
     ]
