@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,a as l}from"./app.563a97a9.js";const i=JSON.parse('{"title":"Navigate","description":"","frontmatter":{"title":"Navigate"},"headers":[],"relativePath":"3/Navigate.md","lastUpdated":1659434821000}'),p={name:"3/Navigate.md"},o=l("",4),e=[o];function t(r,c,F,D,y,C){return n(),a("div",null,e)}var d=s(p,[["render",t]]);export{i as __pageData,d as default};
