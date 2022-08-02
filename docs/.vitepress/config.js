@@ -118,6 +118,10 @@ export default {
             link: '/4/useMatch'
           },
           {
+            text: '⚡useNavigate',
+            link: '/4/useNavigate'
+          },
+          {
             text: 'useRoutes',
             link: '/4/useRoutes'
           },
