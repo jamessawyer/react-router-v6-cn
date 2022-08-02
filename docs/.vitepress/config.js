@@ -63,6 +63,10 @@ export default {
         text: 'Ⅲ.Components',
         collapsible: true,
         items: [
+          {
+            text: 'Link',
+            link: '/3/Link'
+          },
         ]
       },
       {
