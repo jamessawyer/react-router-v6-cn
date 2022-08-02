@@ -118,6 +118,16 @@ export default {
             link: '/4/useRoutes'
           },
         ]
+      },
+      {
+        text: 'V.Utilities',
+        collapsible: true,
+        items: [
+          {
+            text: 'Location',
+            link: '/5/Location'
+          },
+        ]
       }
     ]
   },
