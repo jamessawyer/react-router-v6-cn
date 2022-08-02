@@ -49,6 +49,10 @@ export default {
             text: 'NativeRouter',
             link: '/2/NativeRouter'
           },
+          {
+            text: 'Router',
+            link: '/2/Router'
+          },
         ]
       },
       {
