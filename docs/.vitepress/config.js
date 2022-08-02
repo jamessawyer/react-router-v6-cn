@@ -131,6 +131,10 @@ export default {
             text: 'Location',
             link: '/5/Location'
           },
+          {
+            text: 'matchPath',
+            link: '/5/matchPath'
+          },
         ]
       }
     ]
