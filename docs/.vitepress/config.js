@@ -83,6 +83,10 @@ export default {
             text: 'Outlet',
             link: '/3/Outlet'
           },
+          {
+            text: 'Route & Routes',
+            link: '/3/Route-and-Routes'
+          },
         ]
       },
       {
