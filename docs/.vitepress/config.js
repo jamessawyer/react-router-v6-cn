@@ -149,6 +149,10 @@ export default {
             text: 'useSearchParams',
             link: '/4/useSearchParams'
           },
+          {
+            text: 'useSearchParams(React Native)',
+            link: '/4/useSearchParams-React-Native'
+          },
         ]
       },
       {
