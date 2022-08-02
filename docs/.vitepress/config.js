@@ -94,6 +94,10 @@ export default {
         collapsible: true,
         items: [
           {
+            text: 'useHref',
+            link: '/4/useHref'
+          },
+          {
             text: 'useRoutes',
             link: '/4/useRoutes'
           },
