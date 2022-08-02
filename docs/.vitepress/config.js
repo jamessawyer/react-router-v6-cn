@@ -138,6 +138,10 @@ export default {
             link: '/4/useParams'
           },
           {
+            text: 'useResolvedPath',
+            link: '/4/useResolvedPath'
+          },
+          {
             text: 'useRoutes',
             link: '/4/useRoutes'
           },
