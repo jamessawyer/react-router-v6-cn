@@ -53,6 +53,10 @@ export default {
             text: 'Router',
             link: '/2/Router'
           },
+          {
+            text: 'StaticRouter',
+            link: '/2/StaticRouter'
+          },
         ]
       },
       {
