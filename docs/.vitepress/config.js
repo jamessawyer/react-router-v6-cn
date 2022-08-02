@@ -114,6 +114,10 @@ export default {
             link: '/4/useLocation'
           },
           {
+            text: '⚡useMatch',
+            link: '/4/useMatch'
+          },
+          {
             text: 'useRoutes',
             link: '/4/useRoutes'
           },
