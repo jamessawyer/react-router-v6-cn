@@ -79,6 +79,10 @@ export default {
             text: 'Navigate',
             link: '/3/Navigate'
           },
+          {
+            text: 'Outlet',
+            link: '/3/Outlet'
+          },
         ]
       },
       {
