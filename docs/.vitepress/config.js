@@ -134,6 +134,10 @@ export default {
             link: '/4/useOutletContext'
           },
           {
+            text: 'useParams',
+            link: '/4/useParams'
+          },
+          {
             text: 'useRoutes',
             link: '/4/useRoutes'
           },
