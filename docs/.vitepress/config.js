@@ -41,6 +41,10 @@ export default {
             text: 'HistoryRouter',
             link: '/2/HistoryRouter'
           },
+          {
+            text: 'MemoryRouter',
+            link: '/2/MemoryRouter'
+          },
         ]
       },
       {
