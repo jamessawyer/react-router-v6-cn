@@ -32,7 +32,11 @@ export default {
           {
             text: 'BrowserRouter',
             link: '/2/BrowserRouter'
-          }
+          },
+          {
+            text: 'HashRouter',
+            link: '/2/HashRouter'
+          },
         ]
       },
       {
