@@ -20,6 +20,10 @@ export default {
         collapsible: true,
         items: [
           {
+            text: 'FAQs',
+            link: '/1/FAQs'
+          },
+          {
             text: '⚡主要概念',
             link: '/1/Main-Concepts'
           },
