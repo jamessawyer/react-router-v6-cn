@@ -180,6 +180,10 @@ export default {
             link: '/5/matchPath'
           },
           {
+            text: '⚡matchRoutes',
+            link: '/5/matchRoutes'
+          },
+          {
             text: 'resolvePath',
             link: '/5/resolvePath'
           },
