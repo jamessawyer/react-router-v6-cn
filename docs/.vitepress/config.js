@@ -168,6 +168,10 @@ export default {
             link: '/5/createSearchParams'
           },
           {
+            text: 'generatePath',
+            link: '/5/generatePath',
+          },
+          {
             text: 'Location',
             link: '/5/Location'
           },
