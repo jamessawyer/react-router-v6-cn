@@ -164,6 +164,10 @@ export default {
             link: '/5/createRoutesFromChildren'
           },
           {
+            text: 'createSearchParams',
+            link: '/5/createSearchParams'
+          },
+          {
             text: 'Location',
             link: '/5/Location'
           },
