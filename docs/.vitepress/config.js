@@ -184,6 +184,10 @@ export default {
             link: '/5/matchRoutes'
           },
           {
+            text: 'renderMatches',
+            link: '/5/renderMatches'
+          },
+          {
             text: 'resolvePath',
             link: '/5/resolvePath'
           },
