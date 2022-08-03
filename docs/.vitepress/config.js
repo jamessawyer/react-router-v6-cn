@@ -160,6 +160,10 @@ export default {
         collapsible: true,
         items: [
           {
+            text: '⚡createRoutesFromChildren',
+            link: '/5/createRoutesFromChildren'
+          },
+          {
             text: 'Location',
             link: '/5/Location'
           },
