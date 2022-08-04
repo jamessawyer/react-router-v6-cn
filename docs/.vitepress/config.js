@@ -196,6 +196,17 @@ export default {
             link: '/5/resolvePath'
           },
         ]
+      },
+      {
+        text: 'Bonus',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          {
+            text: 'History APIs',
+            link: '/bonus/history-apis'
+          },
+        ]
       }
     ]
   },
