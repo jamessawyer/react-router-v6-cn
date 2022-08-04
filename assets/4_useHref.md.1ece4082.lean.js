@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as p}from"./app.c2bcea2f.js";const A=JSON.parse('{"title":"useHref","description":"","frontmatter":{"title":"useHref"},"headers":[],"relativePath":"4/useHref.md","lastUpdated":1659621134000}'),o={name:"4/useHref.md"},l=p("",4),e=[l];function t(c,r,y,F,C,D){return n(),a("div",null,e)}var d=s(o,[["render",t]]);export{A as __pageData,d as default};

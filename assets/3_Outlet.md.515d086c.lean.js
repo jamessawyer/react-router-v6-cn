@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as l}from"./app.c2bcea2f.js";const A=JSON.parse('{"title":"Outlet","description":"","frontmatter":{"title":"Outlet"},"headers":[],"relativePath":"3/Outlet.md","lastUpdated":1659621134000}'),p={name:"3/Outlet.md"},o=l("",6),t=[o];function e(c,r,F,D,y,i){return n(),a("div",null,t)}var d=s(p,[["render",e]]);export{A as __pageData,d as default};
