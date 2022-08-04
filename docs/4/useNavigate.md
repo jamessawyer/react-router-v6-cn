@@ -17,6 +17,16 @@ interface NavigateFunction {
   // 2️⃣ 直接传入数字，可以为负数
   (delta: number): void;
 }
+
+// 译者添加
+type To = string | Partial<Path>
+
+// 译者添加
+interface Path {
+  pathname: string;
+  search: string;
+  hash: string;
+}
 ```
 
 `useNavigate` 返回一个函数，让你可以编程性的导航，比如在表单提交后，如果使用 `replace: true`，导航会直接取代历史栈中的当前条目，而不是添加一个新的条目。

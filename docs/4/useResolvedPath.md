@@ -5,6 +5,16 @@ title: useResolvedPath
 类型定义：
 ```typescript
 declare function useResolvedPath(to: To): Path;
+
+// 译者添加
+type To = string | Partial<Path>
+
+// 译者添加
+interface Path {
+  pathname: string;
+  search: string;
+  hash: string;
+}
 ```
 
 📒 该钩子根据当前位置的路径名（`pathname`）解析给定`to`值中位置的路径名。

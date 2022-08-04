@@ -6,6 +6,13 @@ title: ⚡useLocation
 ```typescript
 declare function useLocation(): Location;
 
+// 译者添加
+interface Path {
+  pathname: string;
+  search: string;
+  hash: string;
+}
+
 interface Location extends Path {
   state: unknown;
   key: Key;

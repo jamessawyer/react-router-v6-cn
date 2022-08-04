@@ -7,6 +7,28 @@ declare function useRoutes(
   routes: RouteObject[],
   location?: Partial<Location> | string
 ): React.ReactElement | null;
+
+// 译者添加
+interface RouteObject {
+  caseSensitive?: boolean;
+  children?: RouteObject[];
+  element?: React.ReactNode;
+  index?: boolean;
+  path?: string;
+}
+
+// 译者添加
+interface Path {
+  pathname: string;
+  search: string;
+  hash: string;
+}
+
+// 译者添加
+interface Location extends Path {
+  state: any;
+  key: string;
+}
 ```
 👩🏻‍🏫 `useRoutes` 钩子是 `<Routes>` 的函数形式，但是它使用JS对象定义你的路由，而不是 [\<Route>](../3/Route-and-Routes) 元素，因此它不要使用JSX。
 
