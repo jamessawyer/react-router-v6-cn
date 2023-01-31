@@ -10,6 +10,8 @@ export default {
   
   themeConfig: {
     logo: '/react.svg',
+    outlineTitle: '目录',
+    outline: [2, 3],
     editLink: {
       text: '在GitHub编辑此页',
       pattern: 'https://github.com/jamessawyer/react-router-v6-cn/edit/main/docs/:path'
