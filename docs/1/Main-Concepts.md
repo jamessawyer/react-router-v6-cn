@@ -8,15 +8,15 @@ title: 主要概念
 本文档深入探讨了React Router实现的路由背后的核心概念。
 :::
 
-你可能会疑惑React Router到底做了些什么。它如何帮助你构建你的应用呢？另外，到底什么是 **路由（`router`）** 呢？
+你可能会疑惑React Router到底做了些什么。它是如何帮助你构建你的应用呢？另外，到底什么是 **路由（`router`）** 呢？
 
 如果你曾有这些疑惑，或者想更深入了解路由，这里便是正确的地方。这篇文档将包含React Router幕后所有核心概念详细的解释。🚀
 
 不要被这篇文档吓到了！对日常使用，React Router是相当简单的。仅仅使用的话，不需要这么深入了解它。
 
-React Router不仅仅是将url匹配到函数或组件：它是关于构建一个映射到URL的完整用户界面，所以它可能比你使用到的有更多的概念。我们将深入React Router的3个主要职责：
+React Router不仅仅是将url匹配到函数或组件：它是关于用户界面如何与URL进行完整映射，所以它存在比你实际使用到的概念更多。我们将深入React Router的3个主要职责：
 
-1. 订阅和操作 `history栈`
+1. 订阅和操控 `history栈`
 2. 匹配 `URL` 到你的 `路由`
 3. 根据 `路由匹配` 渲染嵌套UI
 
@@ -26,33 +26,33 @@ React Router不仅仅是将url匹配到函数或组件：它是关于构建一�
 
 首先，先看看一些定义！**对于前后端路由导航框架存在很多不同的思想。** 有时某个 **词** 在不同的语境下会存在不同的含义。
 
-下面是我们再谈论React Router时常用的一些 **词**。后面的文档会对每个词进行更深入的讲解：
+下面是我们在谈论React Router时常用的一些 **词**。后面的文档会对每个词进行更深入的讲解：
 
 1. `URL` - 在地址栏中的URL。很多人将名词 `URL` 和 `route` 交替使用，但它不是React Router中的路由（`route`），它仅仅就是URL；
 2. `Location` - 这是React Router基于浏览器 `window.location` 而来的特定的对象。它表示 *用户在哪里😎*。它基本上是URL的对象表示形式，但包含更多数据；
-3. `Location State` - 一个值，它与`URL`中未编码的 `Location` 一起持久存在。很像hash或者搜索参数（在URL中被编码的数据），**但是对浏览器不可见的被存储**；
-4. `History Stack` - 当用户导航时，浏览器会追踪栈中每个 `Location`。如果你对浏览器的后退按钮你点击，一直按着，就会看到浏览器的历史栈；
-5. `Client Side Routing(CSR)` - 一个纯HTML文档可以链接到其他文档，浏览器自己处理历史堆栈。**客户端路由使得开发者能够自己操作浏览器历史栈，而不需要向服务器发送请求😎**；
+3. `Location State` - 一个值，它与`URL`中未编码的 `Location` 一起持久存在。很像hash或者搜索参数（在URL中被编码的数据），**但是对浏览器不可见的被存储在内存中**；
+4. `History Stack` - 当用户导航时，浏览器会追踪栈中每个 `Location`。如果你对浏览器的后退按钮一直按着点击，就会看到浏览器的历史栈；
+5. `Client Side Routing(CSR)` - 一个纯HTML文档可以链接到其他文档，浏览器能够自己处理历史堆栈。**客户端路由使得开发者能够自己操作浏览器历史栈，而不需要向服务器发送请求😎**；
 6. `History` - 一个对象，它允许React Router订阅URL的变化，另外还提供了编程性操控 `History Stack` 的接口；
 7. `History Action` - `POP | PUSH | REPLACE` 其中的一个；用户可以通过以下三种原因之一访问URL。
-   1. `PUSH`: 当先的条目进入历史栈中（一般是点击链接或者开发者强制导航）
+   1. `PUSH`: 当新的条目添加到历史栈中（一般是点击链接或者开发者强制导航）
    2. `REPLACE`: 和push类似，只不过它会替代当前历史栈中的条目，而不是添加一条新的
    3. `POP`: 当用户点击浏览器的前进或者后退按钮时
-8. `Segment` - `URL | path pattern` 在 `/` 之间的部分，比如 `/users/123` 有2个片段；
+8. `Segment` - `URL | path pattern` 在 `/` 字符之间的部分，比如 `/users/123` 有2个片段；
 9. `Path Pattern` - 📚（路径模式）这些看起来像url，但可以有特殊字符来匹配url到路由，比如 **动态片段（`/users/:userId`）** 或者星号片段（`/docs/*`）。他们不是URLs，它们是React Router将匹配的模式；
 10. `Dynamic Segment` - 路径模式的一段，它是动态的，这意味着它可以匹配段中的任何值。比如，`/users/:userId` 模式将匹配类似 `/users/123` 这样的URLs；
 11. `URL Params` - 从匹配了动态片段的URL中解析出来的值
 12. `Router` - 🤩有状态的，最上层使其它所有组件和hooks运作的的组件；
 13. `Router Config` - 一棵**路由对象树**，它将根据当前位置进行排名和匹配(嵌套)，以创建一个**路由匹配**分支；
 14. `Route` - 📚一个对象或者Route Element，通常包含 `{path, element}` 或者 `<Route path element >` 结构。其中 `path` 是一种路径模式。当路径模式匹配上了当前URL，元素将会被渲染；
-15. `Route Element` - 或 `<Route>` 。🤩元素的属性将被 `<Routes>` 读取创建 `route`；否者什么也不做；
-16. `Nested Routes` - 🤩因为路由可以包含子路由，每个路由通过片段只定义URL的一部分，一个URL可以匹配树的一个嵌套“分支”中的多个路由。*这提供了通过 `outelet` 或 相对链接 等方式创建自动布局嵌套*；
+15. `Route Element` - 或 `<Route>` 。🤩元素的属性将被 `<Routes>` 读取创建 `route`；除此之外，别无他用；
+16. `Nested Routes` - 🤩因为路由可以包含子路由，每个路由通过片段只定义URL的一部分，一个URL可以匹配树中嵌套的“分支”中的多个路由。*这提供了通过 `outelet` 或 相对链接 等方式创建自动布局嵌套的能力*；
 17. `Relative links` - 不以 `/` 开头的链接将继承它们被渲染时最近的路由。这使得链接更深层次的URLs变得简单，而不需要知道整个路径；
-18. `Match` - 📚当路由与URL匹配时保存信息的对象，比如匹配的URL参数和路径名；
-19. `Matches` - 匹配当前location的路由数组（或路由配置分支）。此结构启用嵌套路由；
+18. `Match` - 📚当路由与URL匹配时保存信息的对象，比如匹配的URL参数和pathname；
+19. `Matches` - 匹配当前location的路由数组（或路由配置分支）。这种结构使嵌套路由成为可能；
 20. `Parent Route` - 包含子路由的路由；
 21. `Outlet` - 🤩 渲染一组匹配中的下一个匹配的组件；
-22. `Index Route` - 一种没有路径的子路由，在父路由的URL处的父路由outlet中渲染
+22. `Index Route` - 一种没有路径（`path`）的子路由，在父路由的URL处的父路由outlet中渲染
 23. `Layout Route` - 没有路径的**父路由**，仅用于将子路由组合到特定的布局中
 
 
@@ -63,7 +63,7 @@ React Router不仅仅是将url匹配到函数或组件：它是关于构建一�
 
 在React Router运作前，它必须能够订阅浏览器历史栈（`history stack`） 的变化。
 
-当用户导航时，浏览器会维护自己的历史栈。这正是前进和后台按钮能工作的原因。在传统网站中（不包含JS的HTML文档），每当用户点击链接或者前进后退时，浏览器都会向服务器发送请求，提交表单。
+当用户导航时，浏览器会维护自己的历史栈。这正是前进和后退按钮能工作的原因。在传统网站中（不包含JS的HTML文档），每当用户点击链接或者前进后退时，浏览器都会向服务器发送请求，提交表单。
 
 🌰 比如，假设用户：
 
@@ -129,7 +129,7 @@ history.listen(({ location, action}) => {
 })
 ```
 
-📚应用无需设置它们自己的history对象 - 这是 `<Router>` 的工作😎。它会设置某个这些对象，并订阅历史栈的变化，最终在URL发生变化时更新状态。这导致应用重新渲染，并显示正确的UI。它唯一需要放上状态的东西是一个 `location`，其他一切都从那个单一的对象工作。
+📚应用无需设置它们自己的history对象 - 这是 `<Router>` 的工作😎。它会设置某个这些对象，并订阅历史栈中的变化，最终在URL发生变化时更新状态。这导致应用重新渲染，并显示正确的UI。它唯一需要放上状态的东西是一个 `location`，其他一切都从那个单一的对象工作。
 
 
 
@@ -139,7 +139,7 @@ history.listen(({ location, action}) => {
 
 ```js
 window.location.pathname // 路径信息 /getting-started/concepts/
-window.location.hash // #locations
+window.location.hash // #location
 window.location.reload() // 强制刷新（向服务器发送请求）
 // 等等
 ```
@@ -173,15 +173,48 @@ location.pathname + location.search + location.hash
 
 最后2个属性 `{state, key}` 则是React Router特有的。
 
-
-
-#### 2.2.1 Location Hash
-
-*URL中的Hash表示当前页面滚动的位置。* 在 `window.history.pushState` 接口被引入前，网页开发者只能通过hash方式做客户端导航，它是唯一我们避免向服务端发送请求的一种方式😅。但是，今天我们可以使用它的设计目的。
+#### 2.2.1 Location Pathname
+这是URL origin之后的部分，对于URL `https://example.com/teams/hotspurs`，其pathnam为 `/teams/hotspurs`。这是路由进行匹配的唯一的部分📚。
 
 
 
-#### 2.2.2 Location State
+#### 2.2.2 Location Search
+
+人们对URL这部分使用多种名词：
+
+1. location search
+2. search params
+3. URL search params
+4. query string
+
+在React Router中，我们称之为 `location search`。但是位置搜索是 `URLSearchParams` 序列化后的版本。因此，有时我们可能也称之为 `URL search params`:
+
+```js
+// 假设一个location如下
+let location = {
+  pathname: '/bbq/pig-pickins',
+  search: '?campaign=instagram&popular=true',
+  hash: '',
+  state: null,
+  key: 'aefz24ie'
+}
+
+// 我们将 location.search 变为 URLSearchParams
+let params = new URLSearchParams(location.search)
+params.get('campaign') // 'instagram'
+params.get('popular')  // 'true'
+params.toString()      // 'campaign=instagram&popular=true'
+```
+
+更精确点来讲，序列化字符串版本称之为 `search`，而解析版本被称之为 `search params`，但通常不需要这么精确，混用即可。
+
+#### 2.2.3 Location Hash
+
+*URL中的Hash表示当前页面滚动的位置。* 在 `window.history.pushState` 接口被引入前，网页开发者只能通过hash方式做客户端导航，它是唯一我们避免向服务端发送请求的一种方式😅。但是，今天我们可以使用它原有的设计目的。
+
+
+
+#### 2.2.4 Location State
 
 你可能疑惑为什么 `window.history.pushState()`  方法称之为 `push state`。 状态？难道我们不仅仅改变的是URL？那不应该是 `history.push` 吗？好吧，我们并不在API设计现场，因此我们也不清楚为什么关注点是 `state`，但它仍是浏览器很棒的一个接口。😂
 
@@ -235,7 +268,7 @@ Location state值会被序列化，因此像 `new Date()` 会变为字符串
 
 
 
-#### 2.2.3 Location Key
+#### 2.2.5 Location Key
 
 📚 **每个Location都会得到一个唯一的Key**。这对基于location的滚动管理，客户端缓存等这类高级场景很有用。因为每个location都有唯一的key，你可以构建抽象，将信息存储在普通对象、`new Map()`甚至`locationStorage`中。
 
@@ -254,7 +287,7 @@ function useFakeFetch(URL) {
     return cached || null
   })
   
-  let [state, setState] useState(() => {
+  let [state, setState] = useState(() => {
     // 如果缓存了，避免获取 😎
     return cached ? 'done' : 'loading'
   })
@@ -286,7 +319,7 @@ function useFakeFetch(URL) {
 
 ## 3️⃣ 匹配（Matching）
 
-在初始渲染时，当历史栈发生变化时，React Router会将 `location` 与你的路由配置进行匹配，得出一组`匹配`来渲染。
+在初始渲染时，当历史栈发生变化时，React Router会将 `location` 与你的路由配置进行匹配，得出一组 `匹配（matches）` 进行渲染。
 
 
 
@@ -381,7 +414,7 @@ let routes = [
 
 ### 3.2 匹配参数（Match Params）
 
-注意 `:teamId` 片段，这就是我们所说的`路径模式`的`动态片段`，这意味着它不会静态匹配URL（实际字符），而是动态匹配它。任何值能满足 `:teamId`。`/teams/123` 或 `/teams/cupcakes` 都能够匹配上。我们成被解析的值为 **URL参数（`URL Params`）**。因此在这种情形下，`teamId` 参数可能是 `"123"` 或 `"cupcakes"`。我们将在 **Rendering** 部分看看如果使用它们。
+注意 `:teamId` 片段，这就是我们所说的`路径模式`的`动态片段`，这意味着它不会静态匹配URL（实际字符），而是动态匹配它。任何值能满足 `:teamId`。`/teams/123` 或 `/teams/cupcakes` 都能够匹配上。我们称被解析的值为 **URL参数（`URL Params`）**。因此在这种情形下，`teamId` 参数可能是 `"123"` 或 `"cupcakes"`。我们将在 **Rendering** 部分看看如果使用它们。
 
 
 
@@ -419,16 +452,16 @@ let routes = [
 
 ### 3.4 无路径路由（Pathless Routes）
 
-你可能之前已经主要到了一些奇怪的路由：
+你可能之前已经注意到了一些奇怪的路由：
 
 ```jsx
 <Route index element={<Home />} />
 <Route index element={<LeagueStanding />} />
 <Route element={<PageLayout />} />
 ```
-它们甚至连 `path` 也没有，它们是怎么是一个路由呢？这也是为什么React Router中的 **路由（`route`）** 这个词使用得相当松散的地方。
+它们甚至连 `path` 也没有🤯，它们是怎么是一个路由呢？这也是为什么React Router中的 **路由（`route`）** 这个词使用得相当宽松的地方。
 
-- `<Home />` & `<LeagueStanding />` 是首路由（`index routes`）
+- `<Home />` & `<LeagueStanding />` 是索引路由（`index routes`）
 - `<PageLayout />` 是布局路由（`layout route`）
 
 我们将在 `渲染` 部分讨论它是如何工作的。它们都和匹配没有太大的关系。
@@ -573,7 +606,13 @@ function App() {
 }
 ```
 
-👩🏻‍🏫 `Outlet` 组件总是渲染下**一个匹配**。这意味着 `<Teams>` 也需要一个outlet用来渲染 `<Team />`。
+::: tip
+
+👩🏻‍🏫 `Outlet` 组件总是渲染下**一个匹配**。
+
+:::
+
+这意味着 `<Teams>` 也需要一个outlet用来渲染 `<Team />`。
 
 如果URL是 `/contact-us`，元素树将变为：
 
@@ -593,11 +632,11 @@ function App() {
 </App>
 ```
 
-Outlet会当前子元素交换为新匹配的子元素，而父元素布局保持不变😎。这很微妙但是对清理组件很高效。
+Outlet会将当前子元素交换为新匹配到的子元素，而父元素布局保持不变😎。这很微妙但是对清理组件很高效。
 
 
 
-### 4.2 首路由（Index Routes）
+### 4.2 索引路由（Index Routes）
 
 还记得对 `/teams` URL的路由配置：
 
@@ -629,7 +668,7 @@ Outlet会当前子元素交换为新匹配的子元素，而父元素布局保�
 </App>
 ```
 
-LeagueStanding？为什么会是 `<Route index element={<LeagueStanding />} />` 出现在这里？**它连个 `path` 都没有！** 理由是它是一个 **首路由（`index route`）**。📚当路径为父路由路径时，首路由会在它父路由的 **出口（`outlet`）** 处被渲染。
+LeagueStanding？为什么会是 `<Route index element={<LeagueStanding />} />` 出现在这里？**它连个 `path` 都没有！** 理由是它是一个 **索引路由（`index route`）**。📚当路径为父路由路径时，索引路由会在它父路由的 **出口（`outlet`）** 处被渲染。
 
 可以这样理解，如果你不在你的子路由路径，`<Outlet>` 将在UI中什么都不渲染：
 
@@ -641,9 +680,9 @@ LeagueStanding？为什么会是 `<Route index element={<LeagueStanding />} />` 
 
 👩🏻‍🏫假设所有teams列表在左侧，则一个空的 **出口（`outlet`）** 意味着你将在右边得到一个空白页!你的UI需要填充该空白部分：**首路由便是来做这个事情的🤩**。
 
-另一种理解首路由的方式是，**它是默认子路由，当父路由匹配了，但是它的所有子路由都没匹配上。**
+另一种理解索引路由的方式是，**它是默认的子路由，当父路由匹配了，但是它的所有子路由都没匹配上。**
 
-取决于UI，你可能并不需要首路由，但是，如果父路由中有任何类型的持久导航，你很可能希望当用户还没有点击其中一个条目时，首路由来填充空间。
+取决于UI，你可能并不需要索引路由，但是，如果父路由中有任何类型的持久导航，你很可能希望当用户还没有点击其中任何一个条目时，使用索引路由来填充空间。
 
 
 
@@ -678,7 +717,7 @@ LeagueStanding？为什么会是 `<Route index element={<LeagueStanding />} />` 
 </PageLayout>
 ```
 
-📚显然，`PageLayout` 路由很奇怪。我们诚挚为 **布局路由（`layout route`）**，因为它完全不参与到匹配中（*尽管它的子元素会*）。它的存在只是为了简化在同一个布局中包装多个子路由。如果我们不能这样做，那么我们通过2种不同的方式处理布局：有时你的路由帮你做这些，有时你需要在应用中手动的重复很多布局组件。
+📚显然，`PageLayout` 路由很奇怪。我们称之为 **布局路由（`layout route`）**，因为它完全不参与到匹配中（*尽管它的子元素会*）。它的存在只是为了简化在同一个布局中包装多个子路由。如果我们不能这样做，那么我们通过2种不同的方式处理布局：有时你的路由帮你做这些，有时你需要在应用中手动的重复很多布局组件。
 
 ::: danger
 
@@ -736,14 +775,14 @@ LeagueStanding？为什么会是 `<Route index element={<LeagueStanding />} />` 
 
 ### 5.1 Link
 
-这是主要的导航手段。渲染 `<Link>` 允许用户通过点击改变URL.React Router将组织浏览器默认的行为，告诉 `history` 推送一个新的条目到 `history stack` 中。 `location` 改变， 新的 **匹配（`matches`）** 将被渲染。
+这是主要的导航手段。渲染 `<Link>` 允许用户通过点击改变URL。React Router将阻止浏览器默认行为，告诉 `history` 推送一个新的条目到 `history stack` 中。 `location` 改变， 新的 **匹配（`matches`）** 将被渲染。
 
 然而，可以访问链接，因为它们：
 
 - 仍旧渲染 `<a href>`，因此默认可访性问题也得以支持（比如键盘，聚焦，SEO等）
 - 不阻止浏览器默认行为，如果右键点击或者Command/Ctrl点击 `open in new tab`
 
-**嵌套路由（`Nested Layout`）** 不仅关于渲染布局；他们也开启 **相对链接（`relative links`）**。看看我们先前的 `teams` 路由：
+**嵌套路由（`Nested Layout`）** 不仅关于渲染布局；他们也支持 **相对链接（`relative links`）**。看看我们先前的 `teams` 路由：
 
 ```jsx
 <Route path="teams" element={<Teams />}>
@@ -793,9 +832,10 @@ useEffect(() => {
 navigate('psg')
 ```
 
-你需要有个好的理由用 `navigate` 替代 `<Link>`。这使我们很伤心：
+你需要有个好的理由用 `navigate` 替代 `<Link> ` 的使用。这使我们很伤心：
 
 ```jsx
+// 这是一个很糟糕的示例
 <li onClick={() => navigate("/somewhere")} />
 ```
 
@@ -805,7 +845,7 @@ navigate('psg')
 
 ## 6️⃣ 数据访问（Data Access）
 
-最后，应用为了构建完整的UI，将向React Router索要一些信息。针对这，React Router有一些钩子：
+最后，为了构建完整的UI，应用将向React Router索要一些信息。针对这，React Router有一些钩子：
 
 ```jsx
 let location = useLocation()
@@ -864,3 +904,8 @@ let [urlSearchParams] = useSearchParams()
 9. `<BrowserRouter>` 重现渲染，然后从第2步开始重复
 
 就是这些了！我们希望本指南能帮助你更深入地理解React Router的主要概念。
+
+
+
+2023年01月31日16:17:30
+
