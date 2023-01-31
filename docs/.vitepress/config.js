@@ -176,7 +176,11 @@ export default {
         collapsible: true,
         items: [
           {
-            text: '⚡createRoutesFromChildren',
+            text: '⚡createRoutesFromElements',
+            link: '/utilities/createRoutesFromElements'
+          },
+          {
+            text: 'createRoutesFromChildren',
             link: '/utilities/createRoutesFromChildren'
           },
           {
