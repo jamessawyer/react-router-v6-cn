@@ -23,11 +23,11 @@ export default {
         items: [
           {
             text: 'FAQs',
-            link: '/1/FAQs'
+            link: '/getting-started/FAQs'
           },
           {
             text: '⚡主要概念',
-            link: '/1/Main-Concepts'
+            link: '/getting-started/Main-Concepts'
           },
         ]
       },
@@ -76,136 +76,136 @@ export default {
         ]
       },
       {
-        text: 'Ⅲ.Components',
+        text: 'Components',
         collapsible: true,
         items: [
           {
             text: 'Link',
-            link: '/3/Link'
+            link: '/components/Link'
           },
           {
             text: 'Link(React Native)',
-            link: '/3/Link-React-Native'
+            link: '/components/Link-React-Native'
           },
           {
             text: 'NavLink',
-            link: '/3/NavLink'
+            link: '/components/NavLink'
           },
           {
             text: 'Navigate',
-            link: '/3/Navigate'
+            link: '/components/Navigate'
           },
           {
             text: 'Outlet',
-            link: '/3/Outlet'
+            link: '/components/Outlet'
           },
           {
             text: 'Route & Routes',
-            link: '/3/Route-and-Routes'
+            link: '/components/Route-and-Routes'
           },
         ]
       },
       {
-        text: 'Ⅶ.Hooks',
+        text: 'Hooks',
         collapsible: true,
         items: [
           {
             text: 'useHref',
-            link: '/4/useHref'
+            link: '/hooks/useHref'
           },
           {
             text: 'useInRouterContext',
-            link: '/4/useInRouterContext'
+            link: '/hooks/useInRouterContext'
           },
           {
             text: 'useLinkClickHandler',
-            link: '/4/useLinkClickHandler'
+            link: '/hooks/useLinkClickHandler'
           },
           {
             text: 'useLinkPressHandler',
-            link: '/4/useLinkPressHandler'
+            link: '/hooks/useLinkPressHandler'
           },
           {
             text: '⚡useLocation',
-            link: '/4/useLocation'
+            link: '/hooks/useLocation'
           },
           {
             text: '⚡useMatch',
-            link: '/4/useMatch'
+            link: '/hooks/useMatch'
           },
           {
             text: '⚡useNavigate',
-            link: '/4/useNavigate'
+            link: '/hooks/useNavigate'
           },
           {
             text: 'useNavigationType',
-            link: '/4/useNavigationType'
+            link: '/hooks/useNavigationType'
           },
           {
             text: 'useOutlet',
-            link: '/4/useOutlet'
+            link: '/hooks/useOutlet'
           },
           {
             text: '⚡useOutletContext',
-            link: '/4/useOutletContext'
+            link: '/hooks/useOutletContext'
           },
           {
             text: 'useParams',
-            link: '/4/useParams'
+            link: '/hooks/useParams'
           },
           {
             text: 'useResolvedPath',
-            link: '/4/useResolvedPath'
+            link: '/hooks/useResolvedPath'
           },
           {
             text: 'useRoutes',
-            link: '/4/useRoutes'
+            link: '/hooks/useRoutes'
           },
           {
             text: 'useSearchParams',
-            link: '/4/useSearchParams'
+            link: '/hooks/useSearchParams'
           },
           {
             text: 'useSearchParams(React Native)',
-            link: '/4/useSearchParams-React-Native'
+            link: '/hooks/useSearchParams-React-Native'
           },
         ]
       },
       {
-        text: 'V.Utilities',
+        text: 'Utilities',
         collapsible: true,
         items: [
           {
             text: '⚡createRoutesFromChildren',
-            link: '/5/createRoutesFromChildren'
+            link: '/utilities/createRoutesFromChildren'
           },
           {
             text: 'createSearchParams',
-            link: '/5/createSearchParams'
+            link: '/utilities/createSearchParams'
           },
           {
             text: 'generatePath',
-            link: '/5/generatePath',
+            link: '/utilities/generatePath',
           },
           {
             text: 'Location',
-            link: '/5/Location'
+            link: '/utilities/Location'
           },
           {
             text: 'matchPath',
-            link: '/5/matchPath'
+            link: '/utilities/matchPath'
           },
           {
             text: '⚡matchRoutes',
-            link: '/5/matchRoutes'
+            link: '/utilities/matchRoutes'
           },
           {
             text: 'renderMatches',
-            link: '/5/renderMatches'
+            link: '/utilities/renderMatches'
           },
           {
             text: 'resolvePath',
-            link: '/5/resolvePath'
+            link: '/utilities/resolvePath'
           },
         ]
       },
