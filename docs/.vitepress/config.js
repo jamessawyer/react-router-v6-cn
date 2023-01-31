@@ -36,8 +36,9 @@ export default {
         collapsible: true,
         items: [
           { text: 'Picking a Router 🆕', link: '/routers/picking-a-router' },
-          { text: 'createBrowserRouter 🆕', link: '/routers/createBrowserRouter' },
+          { text: '⚡createBrowserRouter 🆕', link: '/routers/createBrowserRouter' },
           { text: 'createHashRouter 🆕', link: '/routers/createHashRouter' },
+          { text: 'createMemoryRouter 🆕', link: '/routers/createMemoryRouter' },
           { text: 'RouterProvider 🆕', link: '/routers/RouterProvider' },
         ],
       },
