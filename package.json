@@ -13,8 +13,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "1.0.0-alpha.4",
-    "vue": "^3.2.37"
+    "vitepress": "1.0.0-alpha.43",
+    "vue": "^3.2.45"
   },
   "pnpm": {
     "peerDependencyRules": {
