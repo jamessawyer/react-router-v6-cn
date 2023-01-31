@@ -18,7 +18,7 @@ export default {
     },
     sidebar: [
       {
-        text: 'Ⅰ.Getting Started',
+        text: 'Getting Started',
         collapsible: true,
         items: [
           {
@@ -32,36 +32,46 @@ export default {
         ]
       },
       {
-        text: 'Ⅱ.Routers',
+        text: 'Routers',
+        collapsible: true,
+        items: [
+          { text: 'Picking a Router 🆕', link: '/routers/picking-a-router' },
+          { text: 'createBrowserRouter 🆕', link: '/routers/createBrowserRouter' },
+          { text: 'createHashRouter 🆕', link: '/routers/createHashRouter' },
+          { text: 'RouterProvider 🆕', link: '/routers/RouterProvider' },
+        ],
+      },
+      {
+        text: 'Router Components',
         collapsible: true,
         items: [
           {
             text: 'BrowserRouter',
-            link: '/2/BrowserRouter'
+            link: '/router-components/BrowserRouter'
           },
           {
             text: 'HashRouter',
-            link: '/2/HashRouter'
+            link: '/router-components/HashRouter'
           },
           {
             text: 'HistoryRouter',
-            link: '/2/HistoryRouter'
+            link: '/router-components/HistoryRouter'
           },
           {
             text: 'MemoryRouter',
-            link: '/2/MemoryRouter'
+            link: '/router-components/MemoryRouter'
           },
           {
             text: 'NativeRouter',
-            link: '/2/NativeRouter'
+            link: '/router-components/NativeRouter'
           },
           {
             text: 'Router',
-            link: '/2/Router'
+            link: '/router-components/Router'
           },
           {
             text: 'StaticRouter',
-            link: '/2/StaticRouter'
+            link: '/router-components/StaticRouter'
           },
         ]
       },
