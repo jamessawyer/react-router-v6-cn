@@ -24,14 +24,15 @@ interface HashRouterProps {
 
 ```jsx
 import * as React from 'react'
-import * as ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { HashRouter } from 'react-dom-router'
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'))
+
+root.render(
   <HashRouter>
     {/* 应用的其余部分放在这里 */}
-  </HashRouter>,
-  root
+  </HashRouter>
 )
 ```
 
@@ -43,4 +44,6 @@ ReactDOM.render(
 
 
 
-2022年08月02日15:15:37
+createAt: 2022年08月02日15:15:37
+
+updateAt: 2023年01月31日18:12:34

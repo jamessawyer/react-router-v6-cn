@@ -23,7 +23,7 @@ interface StaticRouterProps {
 ```jsx {7-10}
 import * as React from 'react'
 import * as ReactServer from 'react-dom/server'
-import { StaticRouter } from 'react-router-dom'
+import { StaticRouter } from 'react-router-dom/server'
 import http from 'http'
 
 function requestHandler(req, res) {
@@ -45,4 +45,7 @@ http.createServer(requestHandler).listen(3000)
 - 随着React18发布，现在服务端一般会使用 `ReactDOMServer.renderToPipeableStream()` 接口提升性能，以及服务端组件
 - [ReactDOMServer](https://reactjs.org/docs/react-dom-server.html#gatsby-focus-wrapper)
 
-2022年08月02日16:09:34
+
+createAt: 2022年08月02日16:09:34
+
+updateAt: 2023年01月31日18:19:29

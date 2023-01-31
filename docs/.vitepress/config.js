@@ -46,34 +46,12 @@ export default {
         text: 'Router Components',
         collapsible: true,
         items: [
-          {
-            text: 'BrowserRouter',
-            link: '/router-components/BrowserRouter'
-          },
-          {
-            text: 'HashRouter',
-            link: '/router-components/HashRouter'
-          },
-          {
-            text: 'HistoryRouter',
-            link: '/router-components/HistoryRouter'
-          },
-          {
-            text: 'MemoryRouter',
-            link: '/router-components/MemoryRouter'
-          },
-          {
-            text: 'NativeRouter',
-            link: '/router-components/NativeRouter'
-          },
-          {
-            text: 'Router',
-            link: '/router-components/Router'
-          },
-          {
-            text: 'StaticRouter',
-            link: '/router-components/StaticRouter'
-          },
+          { text: 'BrowserRouter', link: '/router-components/BrowserRouter' },
+          { text: 'HashRouter', link: '/router-components/HashRouter' },
+          { text: 'MemoryRouter', link: '/router-components/MemoryRouter' },
+          { text: 'NativeRouter', link: '/router-components/NativeRouter' },
+          { text: 'Router', link: '/router-components/Router' },
+          { text: 'StaticRouter', link: '/router-components/StaticRouter' },
         ]
       },
       {
