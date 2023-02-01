@@ -55,6 +55,17 @@ export default {
         ]
       },
       {
+        text: 'Route',
+        collapsible: true,
+        items: [
+          { text: '⚡Route 🆕', link: '/route/route' },
+          { text: 'action 🆕', link: '/route/action' },
+          { text: 'errorElement 🆕', link: '/route/errorElement' },
+          { text: 'loader 🆕', link: '/route/loader' },
+          { text: 'shouldRevalidate 🆕', link: '/route/shouldRevalidate' },
+        ]
+      },
+      {
         text: 'Components',
         collapsible: true,
         items: [
