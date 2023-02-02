@@ -28,6 +28,7 @@ const sidebar_fetch = {
   collapsible: true,
   items: [
     { text: 'json 🆕', link: '/fetch/json' },
+    { text: 'redirect 🆕', link: '/fetch/redirect' },
   ]
 }
 
