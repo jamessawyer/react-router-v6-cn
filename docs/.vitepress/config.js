@@ -23,6 +23,23 @@ const sidebar_hooks = {
   ]
 }
 
+const sidebar_utils = {
+  text: 'Utilities',
+  collapsible: true,
+  items: [
+    { text: '⚡createRoutesFromElements', link: '/utilities/createRoutesFromElements' },
+    { text: 'createRoutesFromChildren', link: '/utilities/createRoutesFromChildren' },
+    { text: 'createSearchParams', link: '/utilities/createSearchParams' },
+    { text: 'generatePath', link: '/utilities/generatePath' },
+    { text: 'Location', link: '/utilities/Location' },
+    { text: 'matchPath', link: '/utilities/matchPath' },
+    { text: '⚡matchRoutes', link: '/utilities/matchRoutes' },
+    { text: 'renderMatches', link: '/utilities/renderMatches' },
+    { text: 'resolvePath', link: '/utilities/resolvePath' },
+    { text: 'isRouteErrorResponse 🆕', link: '/utilities/isRouteErrorResponse' },
+  ]
+}
+
 const sidebar = [
   {
     text: 'Getting Started',
@@ -103,48 +120,7 @@ const sidebar = [
     ]
   },
   sidebar_hooks,
-  {
-    text: 'Utilities',
-    collapsible: true,
-    items: [
-      {
-        text: '⚡createRoutesFromElements',
-        link: '/utilities/createRoutesFromElements'
-      },
-      {
-        text: 'createRoutesFromChildren',
-        link: '/utilities/createRoutesFromChildren'
-      },
-      {
-        text: 'createSearchParams',
-        link: '/utilities/createSearchParams'
-      },
-      {
-        text: 'generatePath',
-        link: '/utilities/generatePath',
-      },
-      {
-        text: 'Location',
-        link: '/utilities/Location'
-      },
-      {
-        text: 'matchPath',
-        link: '/utilities/matchPath'
-      },
-      {
-        text: '⚡matchRoutes',
-        link: '/utilities/matchRoutes'
-      },
-      {
-        text: 'renderMatches',
-        link: '/utilities/renderMatches'
-      },
-      {
-        text: 'resolvePath',
-        link: '/utilities/resolvePath'
-      },
-    ]
-  },
+  sidebar_utils,
   {
     text: 'Bonus',
     collapsible: true,
