@@ -154,7 +154,7 @@ function SomeRoute() {
 }
 ```
 
-使用 `json` （LINK）工具可以简化这一流程，因此你可以不需要自己构建。下面代码等同于上面代码：
+使用 [json](../fetch/json) 工具可以简化这一流程，因此你可以不需要自己构建。下面代码等同于上面代码：
 
 ```js {5}
 import { json } from 'react-router-dom'

@@ -118,7 +118,7 @@ fetcher.submit(data, {
 
 ## 返回响应
 
-你可以在action中返回任何值，然后通过 `useActionData` (TODO) 获取action返回的值。当然，你也可以返回一个 [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)。
+你可以在action中返回任何值，然后通过 `useActionData` (LINK) 获取action返回的值。当然，你也可以返回一个 [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)。
 
 - 更多可参考 [loader response](./loader#返回响应) 文档
 

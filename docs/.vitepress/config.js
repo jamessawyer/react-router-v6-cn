@@ -23,6 +23,14 @@ const sidebar_hooks = {
   ]
 }
 
+const sidebar_fetch = {
+  text: 'Fetch Utilities',
+  collapsible: true,
+  items: [
+    { text: 'json 🆕', link: '/fetch/json' },
+  ]
+}
+
 const sidebar_utils = {
   text: 'Utilities',
   collapsible: true,
@@ -120,6 +128,7 @@ const sidebar = [
     ]
   },
   sidebar_hooks,
+  sidebar_fetch,
   sidebar_utils,
   {
     text: 'Bonus',
