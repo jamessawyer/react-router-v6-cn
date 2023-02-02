@@ -2,6 +2,7 @@ const sidebar_hooks = {
   text: 'Hooks',
   collapsible: true,
   items: [
+    { text: 'useActionData 🆕', link: '/hooks/useActionData' },
     { text: 'useHref', link: '/hooks/useHref' },
     { text: 'useInRouterContext', link: '/hooks/useInRouterContext' },
     { text: 'useLinkClickHandler', link: '/hooks/useLinkClickHandler' },
