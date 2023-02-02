@@ -208,12 +208,26 @@ export default {
         collapsible: true,
         collapsed: true,
         items: [
-          {
-            text: 'History APIs',
-            link: '/bonus/history-apis'
-          },
+          { text: 'History APIs', link: '/bonus/history-apis' },
+          { text: '🎉Recipes', link: '/bonus/recipes' },
         ]
-      }
+      },
+      {
+        text: 'Resources',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          { text: 'React Router v6.4+', link: '/resources/data-apis' },
+        ]
+      },
+      {
+        text: '深入理解路由',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          { text: 'history.js', link: '/in-depth/history' },
+        ]
+      },
     ]
   },
   markdown: {
