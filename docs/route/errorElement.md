@@ -2,7 +2,7 @@
 title: errorElement (data APIs)
 ---
 
-当在 [loaders](./loader)，[actions](./action) 或组件渲染中抛出异常时，错误路径将被渲染（`<Route errorElement>`），而不是渲染正常路径的路由（`<Route element>`）。可以使用 `useRouteError` （LINK）获取该error。
+当在 [loaders](./loader)，[actions](./action) 或组件渲染中抛出异常时，错误路径将被渲染（`<Route errorElement>`），而不是渲染正常路径的路由（`<Route element>`）。可以使用 [useRouteError](../hooks/useRouteError) 获取该error。
 
 
 
@@ -105,9 +105,9 @@ function ErrorBoundary() {
 
 ## 抛出响应
 
-你可以抛出任何东西，然后它会通过 `useRouterError` （LINK） 提供给你，如果你抛出了一个 [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)，React Router在返回给你的组件之前会自动解析响应数据📚。
+你可以抛出任何东西，然后它会通过 [useRouterError](../hooks/useRouteError) 提供给你，如果你抛出了一个 [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)，React Router在返回给你的组件之前会自动解析响应数据📚。
 
-另外，`isRouteErrorResponse` （LINK）允许你在错误边界中检测这一特殊类型。💡结合 `json` (LINk) ，你可以很容易得抛出包含某些数据的响应，然后在错误边界中渲染不同的内容。
+另外，[isRouteErrorResponse](../utilities/isRouteErrorResponse) 允许你在错误边界中检测这一特殊类型。💡结合 `json` (LINk) ，你可以很容易得抛出包含某些数据的响应，然后在错误边界中渲染不同的内容。
 
 ```jsx
 import { json, useRouteError } from 'react-router-dom'

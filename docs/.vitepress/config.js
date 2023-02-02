@@ -16,6 +16,7 @@ const sidebar_hooks = {
     { text: 'useParams', link: '/hooks/useParams' },
     { text: 'useResolvedPath', link: '/hooks/useResolvedPath' },
     { text: 'useRouteLoaderData 🆕', link: '/hooks/useRouteLoaderData' },
+    { text: 'useRouteError 🆕', link: '/hooks/useRouteError' },
     { text: 'useRoutes', link: '/hooks/useRoutes' },
     { text: 'useSearchParams', link: '/hooks/useSearchParams' },
     { text: 'useSearchParams(React Native)', link: '/hooks/useSearchParams-React-Native' },
