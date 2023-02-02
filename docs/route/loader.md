@@ -30,7 +30,7 @@ createBrowserRouter([
 ])
 ```
 
-当用户在应用间导航时，下一个匹配到的分支的路由 `loaders` 将 **`并行`** 被调用😎，它们的数据通过 `useLoaderData`（LINK）对组件可用。
+当用户在应用间导航时，下一个匹配到的分支的路由 `loaders` 将 **`并行`** 被调用😎，它们的数据通过 [useLoaderData](../hooks/useLoaderData) 对组件可用。
 
 
 
@@ -106,7 +106,7 @@ function loader({ request }) {
 
 ## 返回响应
 
-你可以在loader中返回任何值，然后通过 `useLoaderData` (LINK) 获取loader返回的值。当然，你也可以返回一个 [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)。
+你可以在loader中返回任何值，然后通过 [useLoaderData](../hooks/useLoaderData) 获取loader返回的值。当然，你也可以返回一个 [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)。
 
 这可能看起来没有立即的用处，但是考虑`fetch`。由于`fetch`的返回值是一个Response，而loader理解响应，许多loaders可以返回一个简单的fetch!
 
