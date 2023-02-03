@@ -40,9 +40,35 @@ interface PathPattern<Path extends string = string> {
 :::
 
 返回给定路径上相对于当前位置(`location`)的路由的匹配数据。
+
+🌰
+
+```js
+const match = useMatch('/post/:postId')
+
+// 假设访问 `/post/123`
+// match为
+const obj ={
+  params: {
+    postId: '123'
+  },
+  pathname: '/post/123',
+  pathnameBase: 'post/123',
+  pattern: {
+    path: '/post/:postId',
+    caseSensitive: false,
+    end: true
+  }
+}
+```
+
+
+
+
+
 查看 [matchPath](../utilities/matchPath) 了解更多。
 
 
 createAt: 2022年08月02日22:32:54
 
-updateAt: 2023年02月03日10:55:40
+updateAt: 2023年02月03日13:50:16
