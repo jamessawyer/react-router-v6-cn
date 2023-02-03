@@ -12,6 +12,7 @@ declare function useLinkClickHandler<
     target?: React.HTMLAttributeAnchorTarget;
     replace?: boolean;
     state?: any;
+    options?: { relative?: RelativeRoutingType };
   }
 ): (event: React.MouseEvent<E, MouseEvent>) => void
 ```
@@ -62,4 +63,6 @@ const Link = React.forwardRef(
 )
 ```
 
-2022年08月02日22:02:29
+createAt: 2022年08月02日22:02:29
+
+updateAt: 2023年02月03日14:14:27
