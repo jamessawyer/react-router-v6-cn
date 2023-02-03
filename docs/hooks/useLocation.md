@@ -18,7 +18,7 @@ interface Location extends Path {
   key: Key;
 }
 ```
-这个钩子返回当前 [location](../5/Location) 对象。如果当前location发生变化，你想执行一些副作用时，这很有用。
+这个钩子返回当前 [location](../utilities/Location) 对象。如果当前location发生变化，你想执行一些副作用时，这很有用。
 ```jsx {5,10}
 import * as React from 'react'
 import { useLocation } from 'react-router-dom'
