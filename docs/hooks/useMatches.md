@@ -69,8 +69,8 @@ function SomeComponent() {
 ```jsx [App.jsx]
 <Route element={<Root />}>
   <Route
-    path="message"
-    element={<Message />}
+    path="messages"
+    element={<Messages />}
     loader={loadMessages}
     handle={{
       // 你可以在handle中放任何数据
@@ -104,7 +104,9 @@ function SomeComponent() {
 function Breadcrumbs() {
   let matches = useMatches()
   let crumbs = matches
+    // 首先过滤掉不存在handle和crumb的matches
   	.filter(match => Boolean(match.handle?.crumb))
+    // 然后将其映射为元素数组，将loader data传入
   	.map(match => match.handle.crumb(match.data))
  
   return (

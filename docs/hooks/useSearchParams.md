@@ -20,9 +20,17 @@ type URLSearchParamsInit =
  | URLSearchParams;
 
 type SetURLSearchParams = (
-  nextInit?: URLSearchParamsInit,
-  navigateOpts?: { replace?: boolean; state?: any }
+  nextInit?: 
+    | URLSearchParamsInit
+    | ((prev: URLSearchParams) => URLSearchParamsInit),
+  navigateOpts?: NavigateOptions
 ) => void;
+
+interface NavigateOptions {
+  replace?: boolean;
+  state?: any;
+  preventScrollReset?: boolean;
+}
 ```
 📒 `useSearchParams` 钩子用于读取或者修改当前location URL中的查询字符串（`query string`）。 像React自己的 [useState](https://reactjs.org/docs/hooks-reference.html#usestate) 钩子一样，`useSearchParams` 返回包含2个值的数组😎：当前location的 [search params](https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams) 和一个用于更新搜索参数的函数。
 

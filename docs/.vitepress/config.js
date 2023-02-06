@@ -70,8 +70,8 @@ const sidebar_hooks = {
     { text: '⚡useOutletContext', link: '/hooks/useOutletContext' },
     { text: 'useParams', link: '/hooks/useParams' },
     { text: 'useResolvedPath', link: '/hooks/useResolvedPath' },
-    { text: 'useRouteLoaderData 🆕', link: '/hooks/useRouteLoaderData' },
     { text: 'useRouteError 🆕', link: '/hooks/useRouteError' },
+    { text: 'useRouteLoaderData 🆕', link: '/hooks/useRouteLoaderData' },
     { text: 'useRoutes', link: '/hooks/useRoutes' },
     { text: 'useSearchParams', link: '/hooks/useSearchParams' },
     { text: 'useSearchParams(React Native)', link: '/hooks/useSearchParams-React-Native' },
@@ -96,12 +96,12 @@ const sidebar_utils = {
     { text: 'createSearchParams', link: '/utilities/createSearchParams' },
     { text: 'defer 🆕', link: '/utilities/defer'},
     { text: 'generatePath', link: '/utilities/generatePath' },
+    { text: 'isRouteErrorResponse 🆕', link: '/utilities/isRouteErrorResponse' },
     { text: 'Location', link: '/utilities/Location' },
     { text: 'matchPath', link: '/utilities/matchPath' },
     { text: '⚡matchRoutes', link: '/utilities/matchRoutes' },
     { text: 'renderMatches', link: '/utilities/renderMatches' },
     { text: 'resolvePath', link: '/utilities/resolvePath' },
-    { text: 'isRouteErrorResponse 🆕', link: '/utilities/isRouteErrorResponse' },
   ]
 }
 

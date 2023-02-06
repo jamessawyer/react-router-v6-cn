@@ -7,8 +7,7 @@ declare function useMatch<
   ParamKey extends ParamParseKey<Path>,
   Path extends string
 >(
-  pattern: PathPattern<Path> | Path,
-  pathname: string
+  pattern: PathPattern<Path> | Path
 ): PathMatch<ParamKey> | null;
 ```
 ::: details 其它类型
