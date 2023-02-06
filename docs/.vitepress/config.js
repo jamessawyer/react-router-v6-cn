@@ -1,3 +1,53 @@
+const sidebar_routers = {
+  text: 'Routers',
+  collapsible: true,
+  items: [
+    { text: 'Picking a Router 🆕', link: '/routers/picking-a-router' },
+    { text: '⚡createBrowserRouter 🆕', link: '/routers/createBrowserRouter' },
+    { text: 'createHashRouter 🆕', link: '/routers/createHashRouter' },
+    { text: 'createMemoryRouter 🆕', link: '/routers/createMemoryRouter' },
+    { text: 'RouterProvider 🆕', link: '/routers/RouterProvider' },
+  ],
+}
+
+const sidebar_router_components = {
+  text: 'Router Components',
+  collapsible: true,
+  items: [
+    { text: 'BrowserRouter', link: '/router-components/BrowserRouter' },
+    { text: 'HashRouter', link: '/router-components/HashRouter' },
+    { text: 'MemoryRouter', link: '/router-components/MemoryRouter' },
+    { text: 'NativeRouter', link: '/router-components/NativeRouter' },
+    { text: 'Router', link: '/router-components/Router' },
+    { text: 'StaticRouter', link: '/router-components/StaticRouter' },
+  ]
+}
+
+const sidebar_route = {
+  text: 'Route',
+  collapsible: true,
+  items: [
+    { text: '⚡Route 🆕', link: '/route/route' },
+    { text: 'action 🆕', link: '/route/action' },
+    { text: 'errorElement 🆕', link: '/route/errorElement' },
+    { text: 'loader 🆕', link: '/route/loader' },
+    { text: 'shouldRevalidate 🆕', link: '/route/shouldRevalidate' },
+  ]
+}
+
+const sidebar_components = {
+  text: 'Components',
+  collapsible: true,
+  items: [
+    { text: 'Link', link: '/components/Link' },
+    { text: 'Link(React Native)', link: '/components/Link-React-Native' },
+    { text: 'NavLink', link: '/components/NavLink' },
+    { text: 'Navigate', link: '/components/Navigate' },
+    { text: 'Outlet', link: '/components/Outlet' },
+    { text: 'Route & Routes', link: '/components/Route-and-Routes' },
+  ]
+}
+
 const sidebar_hooks = {
   text: 'Hooks',
   collapsible: true,
@@ -41,6 +91,7 @@ const sidebar_utils = {
     { text: '⚡createRoutesFromElements', link: '/utilities/createRoutesFromElements' },
     { text: 'createRoutesFromChildren', link: '/utilities/createRoutesFromChildren' },
     { text: 'createSearchParams', link: '/utilities/createSearchParams' },
+    { text: 'defer 🆕', link: '/utilities/defer'},
     { text: 'generatePath', link: '/utilities/generatePath' },
     { text: 'Location', link: '/utilities/Location' },
     { text: 'matchPath', link: '/utilities/matchPath' },
@@ -48,6 +99,14 @@ const sidebar_utils = {
     { text: 'renderMatches', link: '/utilities/renderMatches' },
     { text: 'resolvePath', link: '/utilities/resolvePath' },
     { text: 'isRouteErrorResponse 🆕', link: '/utilities/isRouteErrorResponse' },
+  ]
+}
+
+const sidebar_guides = {
+  text: 'Guides',
+  collapsible: true,
+  items: [
+    { text: 'Deferred Data 🆕', link: '/guides/deferred-data' },
   ]
 }
 
@@ -66,73 +125,14 @@ const sidebar = [
       },
     ]
   },
-  {
-    text: 'Routers',
-    collapsible: true,
-    items: [
-      { text: 'Picking a Router 🆕', link: '/routers/picking-a-router' },
-      { text: '⚡createBrowserRouter 🆕', link: '/routers/createBrowserRouter' },
-      { text: 'createHashRouter 🆕', link: '/routers/createHashRouter' },
-      { text: 'createMemoryRouter 🆕', link: '/routers/createMemoryRouter' },
-      { text: 'RouterProvider 🆕', link: '/routers/RouterProvider' },
-    ],
-  },
-  {
-    text: 'Router Components',
-    collapsible: true,
-    items: [
-      { text: 'BrowserRouter', link: '/router-components/BrowserRouter' },
-      { text: 'HashRouter', link: '/router-components/HashRouter' },
-      { text: 'MemoryRouter', link: '/router-components/MemoryRouter' },
-      { text: 'NativeRouter', link: '/router-components/NativeRouter' },
-      { text: 'Router', link: '/router-components/Router' },
-      { text: 'StaticRouter', link: '/router-components/StaticRouter' },
-    ]
-  },
-  {
-    text: 'Route',
-    collapsible: true,
-    items: [
-      { text: '⚡Route 🆕', link: '/route/route' },
-      { text: 'action 🆕', link: '/route/action' },
-      { text: 'errorElement 🆕', link: '/route/errorElement' },
-      { text: 'loader 🆕', link: '/route/loader' },
-      { text: 'shouldRevalidate 🆕', link: '/route/shouldRevalidate' },
-    ]
-  },
-  {
-    text: 'Components',
-    collapsible: true,
-    items: [
-      {
-        text: 'Link',
-        link: '/components/Link'
-      },
-      {
-        text: 'Link(React Native)',
-        link: '/components/Link-React-Native'
-      },
-      {
-        text: 'NavLink',
-        link: '/components/NavLink'
-      },
-      {
-        text: 'Navigate',
-        link: '/components/Navigate'
-      },
-      {
-        text: 'Outlet',
-        link: '/components/Outlet'
-      },
-      {
-        text: 'Route & Routes',
-        link: '/components/Route-and-Routes'
-      },
-    ]
-  },
+  sidebar_routers,
+  sidebar_router_components,
+  sidebar_route,
+  sidebar_components,
   sidebar_hooks,
   sidebar_fetch,
   sidebar_utils,
+  sidebar_guides,
   {
     text: 'Bonus',
     collapsible: true,
