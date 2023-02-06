@@ -39,6 +39,7 @@ const sidebar_components = {
   text: 'Components',
   collapsible: true,
   items: [
+    { text: 'Await 🆕', link: '/components/Await' },
     { text: 'Link', link: '/components/Link' },
     { text: 'Link(React Native)', link: '/components/Link-React-Native' },
     { text: 'NavLink', link: '/components/NavLink' },
@@ -53,6 +54,8 @@ const sidebar_hooks = {
   collapsible: true,
   items: [
     { text: 'useActionData 🆕', link: '/hooks/useActionData' },
+    { text: 'useAsyncError 🆕', link: '/hooks/useAsyncError' },
+    { text: 'useAsyncValue 🆕', link: '/hooks/useAsyncValue' },
     { text: 'useHref', link: '/hooks/useHref' },
     { text: 'useInRouterContext', link: '/hooks/useInRouterContext' },
     { text: 'useLinkClickHandler', link: '/hooks/useLinkClickHandler' },
