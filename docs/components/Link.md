@@ -24,9 +24,12 @@ interface LinkProps
   state?: any; 
   to: To;
   reloadDocument?: boolean;
+  preventScrollReset?: boolean;
+  relative?: 'route' | 'path';
 }
-```
 
+type To = string | Partial<Path>
+```
 :::
 
 
@@ -63,7 +66,106 @@ function UsersIndexPage({ users }) {
 
 :::
 
+## relative
+
+默认情况下，链接是相对于路由层级的，因此 `..` 会向上一个路由层级。偶尔，你可能会发现匹配的URL模式无法嵌套，因此更倾向于使用相对路径路由。你可以通过 `relative` 属性选择这种行为。
+
+```jsx {11,12,14}
+// Contact 和 EditContact 不共享额外的UI布局
+<Route path="/" element={<Layout />}>
+  <Route path="contacts/:id" element={<Contact />} />
+  <Route
+    path="contacts/:id/edit"
+    element={<EditContact />}
+  />
+</Route>
+
+function EditContact() {
+  // 因为Contact不是EditContact的父路由
+  // 我们需要`路径上`向上一个层级，而不是在`路由层级上`上一个层级📚
+  return (
+    <Link to=".." relative>
+      Cancel
+    </Link>
+  )
+}
+```
 
 
-2022年08月02日16:36:50
+
+## preventScrollReset
+
+如果你正在使用 ScrollRestoration组件（LINK），这个属性允许你在点击链接后阻止滚动位置被重置到窗口的顶部。
+
+```jsx
+<Link to="?tab=one" preventScrollReset={true} />
+```
+
+::: warning
+
+这并不会在用户点击返回或者前进按钮的情况下阻止滚动位置重置，只有用户点击该链接时才会阻止。
+
+:::
+
+你可能需要这种行为的一个场景是，一组不再页面顶部的tabs通过操控url搜索参数。你不可能希望用户切换tabs突然跳转到顶部位置😅。
+
+```bash
+      ┌─────────────────────────┐
+      │                         ├──┐
+      │                         │  │
+      │                         │  │ scrolled
+      │                         │  │ out of view
+      │                         │  │
+      │                         │ ◄┘
+    ┌─┴─────────────────────────┴─┐
+    │                             ├─┐
+    │                             │ │ viewport
+    │   ┌─────────────────────┐   │ │
+    │   │  tab   tab   tab    │   │ │
+    │   ├─────────────────────┤   │ │
+    │   │                     │   │ │
+    │   │                     │   │ │
+    │   │ content             │   │ │
+    │   │                     │   │ │
+    │   │                     │   │ │
+    │   └─────────────────────┘   │ │
+    │                             │◄┘
+    └─────────────────────────────┘
+```
+
+
+
+## replace
+
+如果你想要通过 [history.replaceState](https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState) 替换当前历史栈中的记录，而不是使用默认的 [history.pushState](https://developer.mozilla.org/en-US/docs/Web/API/History/pushState) 时，使用这个属性。
+
+
+
+## state
+
+`state`属性可以给下一个location设置一些状态值，它被存储在 [history.state](https://developer.mozilla.org/en-US/docs/Web/API/History/state) 中。这个值后续可以通过 [useLocation()](../hooks/useLocation) 获取到。
+
+```jsx
+<Link to="new-path" state={{ some: 'value '}} />
+```
+
+你可以在 `new-path` 路由中访问到该状态值：
+
+```jsx
+let { state } = useLocation()
+```
+
+::: tip
+
+💡一个使用场景就是，用户访问某个没有权限的页面，跳转到登录页，可以将没有权限的页面的路径作为 `state` 传递给登录页，等登录成功后，再跳转到该页面。
+
+:::
+
+
+
+
+
+createAt: 2022年08月02日16:36:50
+
+updateAt: 2023年02月09日10:01:11
 

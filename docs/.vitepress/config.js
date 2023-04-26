@@ -40,6 +40,7 @@ const sidebar_components = {
   collapsible: true,
   items: [
     { text: 'Await 🆕', link: '/components/Await' },
+    { text: 'Form 🆕', link: '/components/Form' },
     { text: 'Link', link: '/components/Link' },
     { text: 'Link(React Native)', link: '/components/Link-React-Native' },
     { text: 'NavLink', link: '/components/NavLink' },
@@ -56,6 +57,7 @@ const sidebar_hooks = {
     { text: 'useActionData 🆕', link: '/hooks/useActionData' },
     { text: 'useAsyncError 🆕', link: '/hooks/useAsyncError' },
     { text: 'useAsyncValue 🆕', link: '/hooks/useAsyncValue' },
+    { text: 'useFetcher 🆕', link: '/hooks/useFetcher' },
     { text: 'useHref', link: '/hooks/useHref' },
     { text: 'useInRouterContext', link: '/hooks/useInRouterContext' },
     { text: 'useLinkClickHandler', link: '/hooks/useLinkClickHandler' },
@@ -65,6 +67,7 @@ const sidebar_hooks = {
     { text: 'useMatch', link: '/hooks/useMatch' },
     { text: '⚡useMatches 🆕', link: '/hooks/useMatches' },
     { text: '⚡useNavigate', link: '/hooks/useNavigate' },
+    { text: 'useNavigation 🆕', link: '/hooks/useNavigation' },
     { text: 'useNavigationType', link: '/hooks/useNavigationType' },
     { text: 'useOutlet', link: '/hooks/useOutlet' },
     { text: '⚡useOutletContext', link: '/hooks/useOutletContext' },
@@ -75,6 +78,7 @@ const sidebar_hooks = {
     { text: 'useRoutes', link: '/hooks/useRoutes' },
     { text: 'useSearchParams', link: '/hooks/useSearchParams' },
     { text: 'useSearchParams(React Native)', link: '/hooks/useSearchParams-React-Native' },
+    { text: 'useSubmit 🆕', link: '/hooks/useSubmit' },
   ]
 }
 

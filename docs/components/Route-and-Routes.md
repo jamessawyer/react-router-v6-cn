@@ -43,7 +43,7 @@ interface RouteProps {
 </Routes>
 ```
 ::: tip
-🔥 如果你更喜欢通过普通的JS对象定义路由，而不是JSX形式，你可以使用 [useRoutes()](../4/useRoutes)
+🔥 如果你更喜欢通过普通的JS对象定义路由，而不是JSX形式，你可以使用 [useRoutes()](../hooks/useRoutes)
 :::
 📚 `<Route element>` 默认是一个 [\<Outlet>](./Outlet)。这意味着即使不存在显式的 `element` 属性，该路由仍会渲染其子元素，所以你可以嵌套路由路径，而不用在子路由元素周围嵌套UI。🤔
 例如，下面配置，父路由默认渲染一个 `<Outlet>`，所以子路由将在没有任何UI的情况下渲染。但是子路由的路径是`/users/:id`，因为它仍然构建在其父路由的基础上。
